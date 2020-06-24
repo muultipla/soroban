@@ -1,0 +1,9 @@
+
+
+public/
+resources/_gen/
+
+_tmp/
+
+# ides
+.idea/
