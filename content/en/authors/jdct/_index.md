@@ -1,5 +1,5 @@
 {
-    "displayName": "JD Caceres Tapia",
+    "displayName": "JD Cáceres Tapia",
     "authors": [ "jdct" ],
     "slug": "jdct"
 }

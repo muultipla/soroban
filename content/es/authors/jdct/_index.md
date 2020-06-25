@@ -1,6 +1,6 @@
 {
-    "displayName": "JD Caceres Tapia",
+    "displayName": "JD Cáceres Tapia",
     "authors": [ "jdct" ],
     "slug": "jdct"
 }
-JD Cáceres Tapia es ingeniero de software
+Ingeniero de software

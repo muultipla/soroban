@@ -2,6 +2,7 @@
 {{- $index := .Index }}
 {{- $size :=  .Size }}
 {{- $show_section := .Section | default true }}
+{{- $show_author := .Author | default true }}
 {{- $show_front := .Front | default false }}
 {{- $ctx := .Ctx }}
 {{- $bg := (absURL (printf "images/posts/%s" .Image)) }}
@@ -27,16 +28,19 @@
                         {{ $page.Date.Month }}
                     {{ end }}
                     {{ $page.Date.Year }}
-                </time> |
+                </time>
+                {{ if $show_author }}
+                 |
                 <span class="author">
                     {{ partial "metadata_authors" (dict "is_linked" false "Ctx" $page ) }}
                 </span>
+                {{ end }}
             </span>
             {{ if $show_section }}
                 {{- partial "widgets/article-section" $page.Params.sections }}
             {{ end }}
             <h3 class="article_title">{{ $page.Title }}</h3>
-            <div class="article_excerpt {{ if eq $index 0 }} visible {{ end }}">
+            <div class="article_excerpt {{ if and (eq $index 0) $show_front }} visible {{ end }}">
                 <p>{{ $page.Summary | truncate 100 }}</p>
             </div>
         </div>

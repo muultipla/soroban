@@ -6,28 +6,31 @@
 </div>
 {{ end }}
 
-<section id="profile-page" class="pt-5">
+<section class="wrap pt-5">
     <div class="container">
-        {{ if .File }}
+    {{- if .File }}
         {{ $widget := "widgets/about.html" }}
         {{ $username := (path.Base (path.Split .Path).Dir) }}{{/* Alternatively, use `index .Params.authors 0` */}}
         {{ $params := dict "root" $ "page" . "author" $username }}
         {{ partial $widget $params }}
-        {{ end }}
+    {{- end }}
 
-        {{ $query := where .Pages ".IsNode" false }}
-        {{ $count := len $query }}
-        {{ if $count }}
-        <div class="article-widget content-widget-hr">
-            <ul>
-                {{ range $query }}
-                <li>
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                </li>
-                {{ end }}
-            </ul>
-        </div>
-        {{ end }}
+    {{ $query := where .Pages ".IsNode" false }}
+    {{ $count := len $query }}
+    {{- if $count }}
+        {{- $size := .Paginator.PageSize }}
+        {{- $scratch := newScratch }}
+        {{- range $index, $value := $query }}
+            {{ if isset .Params "image" }}
+                {{ $scratch.Set "image" .Params.image }}
+            {{ else }}
+                {{ $scratch.Set "image" "thumbnail.svg" }}
+            {{ end }}
+            {{ $image := $scratch.Get "image" }}
+            {{ $params := (dict "Page" $value "Image" $image "Index" $index "Size" $size "Author" false "Ctx" .) }}
+            {{- partial "components/list-item" $params }}
+        {{- end }}
+    {{- end }}
     </div>
 </section>
 
