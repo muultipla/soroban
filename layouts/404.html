@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="never wrap">
-  <h1 class="never_title">Uh Ohhh!</h1>
-  <p class="pale">We couldn't find the page you're looking for</p>
-  <div class="btn btn_back">Go Back</div>
+    <h1 class="never_title">{{ i18n "errorTitle" }}</h1>
+    <p class="pale">{{ i18n "errorNotFound" }}</p>
+    <div class="btn btn_back">{{ i18n "goBack" }}</div>
 </div>
 {{ end }}

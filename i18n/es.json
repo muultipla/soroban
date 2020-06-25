@@ -1,5 +1,14 @@
 {
+    "goBack": {
+        "other": "Volver"
+    },
     "postTrVersion": {
-        "other": "Versión en inglés"
+        "other": "English version"
+    },
+    "errorTitle": {
+        "other": "Vaya, algo no ha ido bien"
+    },
+    "errorNotFound": {
+        "other": "El recurso que has pedido (ya) no existe..."
     }
 }
