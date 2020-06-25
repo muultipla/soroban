@@ -35,7 +35,7 @@
     p{
         padding-bottom: 0.5rem;
         padding-top: 0.5rem;
-        font-size: 1.05rem;
+        font-size: 1.1rem;
     }
     a{
         color: var(--secondary);
@@ -48,6 +48,7 @@
     ol, ul {
         padding: 1rem 1.25rem;
         list-style: initial;
+        font-size: 1.125rem;
     }
     &_tr_versions {
         font-size: 0.9rem;
@@ -65,7 +66,8 @@
             text-transform: uppercase;
             &:hover {
                 color: var(--light);
-                background-color: var(--secondary);;
+                background-color: var(--secondary);
+                text-decoration: none;
             }
         }
     }

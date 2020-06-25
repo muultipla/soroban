@@ -39,11 +39,6 @@
             }
         }
     }
-    @media (prefers-color-scheme: dark) {
-        &:not([data-mode="lit"]) {
-            @include darkmode;
-        }
-    }
 }
 
 $grid-breakpoints: (
