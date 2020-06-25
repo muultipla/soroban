@@ -1,0 +1,56 @@
+:root {
+    --color-mode: 'lit';
+    --light: #fff;
+    --codebg: #333;
+    --codebg-light: #aaa;
+    --dark: #000;
+    --gray: #f5f5f5;
+    --bubble: #131313;
+    --primary: #263F59;
+    --secondary: #DF3874;
+    --accent: var(--codebg);
+    --bg: var(--light);
+    --text: var(--dark);
+    --font: 'Metropolis', sans-serif;
+    --theme: var(--primary);
+    --ease: cubic-bezier(.19,1,.22,1);
+    --menu-w: 300px;
+    --header-h: 80px;
+
+    @mixin darkmode {
+        --color-mode: 'dim';
+        --bg: var(--dark);
+        --text: var(--light);
+        --accent: var(--bubble);
+        *{
+            box-shadow: none !important;
+        }
+    }
+
+    &[data-mode="dim"] {
+        @include darkmode;
+        .color {
+            &_choice {
+                mix-blend-mode: color-dodge;
+                &::after {
+                    background-image: url(/images/night-moon.jpg);
+                    transform: translateX(1.4rem);
+                }
+            }
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+        &:not([data-mode="lit"]) {
+            @include darkmode;
+        }
+    }
+}
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);

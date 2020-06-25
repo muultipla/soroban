@@ -1,0 +1,8 @@
+{{ $taxonomy := "tags" }}
+{{ if .Param $taxonomy }}
+<p class="post_tags">
+    {{ range $index, $value := (.GetTerms $taxonomy) }}
+        <a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+    {{ end }}
+</p>
+{{ end }}

@@ -1,0 +1,36 @@
+{
+    "es": {
+        "contentDir": "content/es",
+        "languageName": "ES",
+        "weight": 10,
+        "menu": {
+            "main": [
+                {
+                    "name": "Formación",
+                    "url": "/m/formacion"
+                },
+                {
+                    "name": "Tecnología",
+                    "url": "/m/tecnologia"
+                }
+            ]
+        }
+    },
+    "en": {
+        "contentDir": "content/en",
+        "languageName": "EN",
+        "weight": 20,
+        "menu": {
+            "main": [
+                {
+                    "name": "Learning",
+                    "url": "/m/learning"
+                },
+                {
+                    "name": "Tech",
+                    "url": "/m/tech"
+                }
+            ]
+        }
+    }
+}

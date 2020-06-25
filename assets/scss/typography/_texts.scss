@@ -1,0 +1,60 @@
+blockquote {
+    opacity: 0.8;
+    padding: 1rem;
+    position: relative;
+    quotes:'\201C''\201D''\2018''\2019';
+    margin: 0.75rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    background-repeat: no-repeat;
+    background-size: 5rem;
+    background-position: 50% 50%;
+    &::before {
+        content: "";
+        padding: 1px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background: var(--theme);
+    }
+    p{
+        padding-left: 0.5rem !important;
+        font-size: 1.1rem !important;
+        width: 100%;
+        font-weight: 300;
+        font-style: italic;
+    }
+}
+code {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 2px 4px;
+    font-size: 80%;
+    background-color: var(--codebg-light);
+    color: var(--light);
+    border-radius: 4px;
+}
+h1,h2,h3,h4,h5{
+    font-family: inherit;
+    font-weight: 400;
+    padding: 0.33rem 0;
+    margin: 1rem 0;
+    color: inherit;
+}
+h1{
+    font-size:200%;
+    font-weight: 400;
+}
+h2{
+    font-size:175%;
+}
+h3{
+    font-size:150%;
+}
+h4{
+    font-size:125%;
+}
+h5{
+    font-size:120%;
+}

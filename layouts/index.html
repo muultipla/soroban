@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{- $filteredPosts := .Site.Params.blogDir }}
+{{- $pages := .Pages }}
+{{- if .IsHome }}
+    {{- $pages = .Site.RegularPages }}
+    {{- with $filteredPosts }}
+        {{- $pages = where $.Site.RegularPages "Section" . }}
+    {{- end }}
+{{- end }}
+<div class="wrap pt-2 mt-2">
+    {{- $size := .Paginator.PageSize }}
+    {{- $scratch := newScratch }}
+    {{- range $index, $value := (.Paginate $pages).Pages }}
+        {{ if isset .Params "image" }}
+            {{ $scratch.Set "image" .Params.image }}
+        {{ else }}
+            {{ $scratch.Set "image" "thumbnail.svg" }}
+        {{ end }}
+        {{ $image := $scratch.Get "image" }}
+        {{ $params := (dict "Page" $value "Image" $image "Index" $index "Size" $size "Front" true "Ctx" .) }}
+        {{- partial "components/list-item" $params }}
+    {{- end }}
+</div>
+{{ end }}

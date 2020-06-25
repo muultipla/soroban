@@ -1,0 +1,33 @@
+.copy {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(#{$copy-icon-path});
+    background-size: 100%;
+    cursor: pointer;
+    &::before, &::after {
+        content: "";
+        position: absolute;
+        background:var(--theme);
+        color: var(--light);
+        opacity: 0;
+        transition: opacity 0.25s ease-in;
+    }
+    &::before {
+        content: "#{$copy-icon-b4}";
+        font-size: 0.8rem;
+        width: 5.4rem;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        text-align: center;
+        top: -2rem;
+        right: 0;
+    }
+    &_done::before {
+        content: "#{$copy-icon-aft}";
+    }
+    &:hover::before,
+    &:hover::after {
+        opacity: 1;
+    }
+}

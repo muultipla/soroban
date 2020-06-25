@@ -1,0 +1,25 @@
+{{- define "main" -}}
+
+<section class="wrap pt-5">
+    <h1>{{ .Params.displayName }}</h1>
+    <div class="container">
+        {{ $query := where .Pages ".IsNode" false }}
+        {{ $count := len $query }}
+        {{ if $count }}
+            {{- $size := .Paginator.PageSize }}
+            {{- $scratch := newScratch }}
+            {{- range $index, $value := $query }}
+                {{ if isset .Params "image" }}
+                    {{ $scratch.Set "image" .Params.image }}
+                {{ else }}
+                    {{ $scratch.Set "image" "thumbnail.svg" }}
+                {{ end }}
+                {{ $image := $scratch.Get "image" }}
+                {{ $params := (dict "Page" $value "Image" $image "Index" $index "Size" $size "Section" false "Ctx" .) }}
+                {{- partial "components/list-item" $params }}
+            {{- end }}
+        {{ end }}
+    </div>
+</section>
+
+{{- end -}}

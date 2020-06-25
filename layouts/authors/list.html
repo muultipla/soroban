@@ -1,0 +1,34 @@
+{{- define "main" -}}
+
+{{ if not .File }}
+<div class="universal-wrapper pt-3">
+    <h1>{{ .Title }}</h1>
+</div>
+{{ end }}
+
+<section id="profile-page" class="pt-5">
+    <div class="container">
+        {{ if .File }}
+        {{ $widget := "widgets/about.html" }}
+        {{ $username := (path.Base (path.Split .Path).Dir) }}{{/* Alternatively, use `index .Params.authors 0` */}}
+        {{ $params := dict "root" $ "page" . "author" $username }}
+        {{ partial $widget $params }}
+        {{ end }}
+
+        {{ $query := where .Pages ".IsNode" false }}
+        {{ $count := len $query }}
+        {{ if $count }}
+        <div class="article-widget content-widget-hr">
+            <ul>
+                {{ range $query }}
+                <li>
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{- end -}}

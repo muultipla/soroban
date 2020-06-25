@@ -1,0 +1,16 @@
+<div class="archive wrap mt">
+    <h1>{{ .Title }}</h1>
+    {{ $paginator := .Paginate (where .Data.Pages "Section" "!=" "").ByPublishDate.Reverse }}
+    {{- $size := $paginator.PageSize }}
+    {{- $scratch := newScratch }}
+    {{- range $index, $value := $paginator.Pages }}
+        {{ if isset .Params "image" }}
+            {{ $scratch.Set "image" .Params.image }}
+        {{ else }}
+            {{ $scratch.Set "image" "thumbnail.svg" }}
+        {{ end }}
+        {{ $image := $scratch.Get "image" }}
+        {{ $params := (dict "Page" . "Image" $image "Index" $index "Size" $size "Section" false "Ctx" .) }}
+        {{- partial "components/list-item" $params }}
+    {{- end -}}
+</div>

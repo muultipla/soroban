@@ -1,0 +1,40 @@
+.btn{
+    min-width: 150px;
+    font-size: 1rem;
+    margin: 1rem 0 1.5rem;
+    display: inline-block;
+    padding: 7.5px 12.5px;
+    background-color:var(--theme);
+    box-shadow: 0 1rem 4rem rgba(0,0,0,0.5);
+    color: var(--light);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+}
+.close:hover {
+    opacity: 1;
+}
+.close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+.close:before {
+    transform: rotate(45deg);
+}
+.close:after {
+    transform: rotate(-45deg);
+}
+

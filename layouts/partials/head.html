@@ -1,0 +1,15 @@
+<head>
+    <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
+    <meta charset="utf-8">
+    {{- with .Site.Params.ga_verify }}
+    <meta name="google-site-verification" content="{{ . }}" />
+    {{- end }}
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {{- partial "opengraph" . }}
+    {{- partial "favicon" . }}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{- $options := (dict "targetPath" "css/main.css" "outputStyle" "expanded" "enableSourceMap" "true") -}}
+    {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+</head>

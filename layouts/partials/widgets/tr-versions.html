@@ -1,0 +1,7 @@
+{{ if .IsTranslated }}
+    <span class="post_tr_versions">
+        {{ range .Translations }}
+            <a href="{{ .Permalink }}"><span class="lang">{{ i18n "postTrVersion" }}</span></a>
+        {{ end }}
+    </span>
+{{ end }}

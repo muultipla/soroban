@@ -1,0 +1,21 @@
+{{- $ctx := .Ctx -}}
+
+{{- $has_link := .is_linked | default true }}
+{{- $taxonomy := "authors" }}
+{{ with $ctx.Param $taxonomy }}
+    {{ range $index, $name_raw := . }}
+        {{- $profile_page := site.GetPage (printf "/%s/%s" $taxonomy .) -}}
+        {{- $name := $profile_page.Params.displayname | default $name_raw -}}
+
+        {{/* printf "%#v" $profile_page.Params */}}
+
+        {{- if gt $index 0 }}, {{ end -}}
+        <span class="">
+            {{- if and $profile_page $has_link -}}
+                <a href="{{$profile_page.RelPermalink}}">{{$name}}</a>
+            {{- else -}}
+                {{$name}}
+            {{- end -}}
+        </span>
+    {{- end -}}
+{{- end -}}

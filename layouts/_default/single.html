@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="wrap mt post">
+    <article class="post_single">
+        <header>
+            <h1>{{ .Title }}</h1>
+            {{- $date := (dateFormat "02.01.2006" .Date) -}}
+            <p class="post_meta">
+                <span class="post_date pale">{{ $date }}</span> ·
+                <span class="post_byline">{{ partial "metadata_authors" ( dict "Ctx" . ) }}</span>
+            </p>
+            {{- partial "widgets/tags" . }}
+        </header>
+        <div class="post_body">
+            <div class="post_inner">
+                {{ .Content }}
+            </div>
+            <div class="post_extra mb-2">
+                {{- partial "widgets/tr-versions" . }}
+                {{- partial "share" . }}
+            </div>
+
+        </div>
+    </article>
+</div>
+{{ end }}

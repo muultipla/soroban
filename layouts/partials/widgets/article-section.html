@@ -1,0 +1,17 @@
+{{- $sections := . }}
+
+{{- $taxonomy := "sections" }}
+{{ with $sections }}
+    {{ range $index, $name_raw := . }}
+        {{- $data := site.GetPage (printf "/%s/%s" $taxonomy .) -}}
+        {{- $name := $data.Params.displayname | default $name_raw }}
+
+        {{/* printf "%#v" $profile_page.Params */}}
+
+        {{- if eq $index 0 }}
+            <p class="section section-{{ $name_raw }}">{{ $name }}</p>
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+
