@@ -6,7 +6,7 @@
             {{- $date := (dateFormat "02.01.2006" .Date) -}}
             <p class="post_meta">
                 <span class="post_date pale">{{ $date }}</span> ·
-                <span class="post_byline">{{ partial "metadata_authors" ( dict "Ctx" . ) }}</span>
+                <span class="post_byline">{{ partial "metadata_term" ( dict "Ctx" . ) }}</span>
             </p>
             {{- partial "widgets/tags" . }}
         </header>

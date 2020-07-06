@@ -10,7 +10,7 @@
             {{ $scratch.Set "image" "thumbnail.svg" }}
         {{ end }}
         {{ $image := $scratch.Get "image" }}
-        {{ $params := (dict "Page" . "Image" $image "Index" $index "Size" $size "Section" false "Ctx" .) }}
+        {{ $params := (dict "Page" . "Image" $image "Index" $index "Size" $size "Branch" false "Ctx" .) }}
         {{- partial "components/list-item" $params }}
     {{- end -}}
 </div>

@@ -1,7 +1,7 @@
 {{- $ctx := .Ctx -}}
-
+{{- $taxonomy := .Taxonomy | default "authors" -}}
 {{- $has_link := .is_linked | default true }}
-{{- $taxonomy := "authors" }}
+
 {{ with $ctx.Param $taxonomy }}
     {{ range $index, $name_raw := . }}
         {{- $profile_page := site.GetPage (printf "/%s/%s" $taxonomy .) -}}

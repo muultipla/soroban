@@ -8,13 +8,13 @@
     <ul class="sub-menu">
         {{ range .Children }}
         <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-            <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         </li>
         {{ end }}
     </ul>
     {{ else }}
     <li class="{{ if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
-        <a href="{{ .URL | absLangURL }}">{{ .Pre }} <span>{{ .Name }}</span></a>
+        <a href="{{ .URL | relLangURL }}">{{ .Pre }} <span>{{ .Name }}</span></a>
     </li>
     {{ end }}
 {{ end }}

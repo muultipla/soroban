@@ -7,11 +7,11 @@
             "main": [
                 {
                     "name": "Formación",
-                    "url": "/m/formacion"
+                    "url": "b/formacion/"
                 },
                 {
                     "name": "Tecnología",
-                    "url": "/m/tecnologia"
+                    "url": "b/tecnologia/"
                 }
             ]
         }
@@ -24,11 +24,11 @@
             "main": [
                 {
                     "name": "Learning",
-                    "url": "/m/learning"
+                    "url": "b/learning/"
                 },
                 {
                     "name": "Tech",
-                    "url": "/m/tech"
+                    "url": "b/tech/"
                 }
             ]
         }

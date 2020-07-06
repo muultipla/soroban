@@ -5,14 +5,14 @@
    "paginate": 3,
    "taxonomies": {
       "author": "authors",
-      "section": "sections",
+      "branch": "branches",
       "tag": "tags"
    },
    "languageCode": "es",
    "defaultContentLanguage": "es",
    "permalinks": {
       "authors":  "/a/:slug",
-      "sections": "/m/:slug",
+      "branches": "/b/:slug",
       "tags": "/t/:slug/",
       "posts": "/:year/:month/:slug"
    },

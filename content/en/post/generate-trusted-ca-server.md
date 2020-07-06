@@ -4,7 +4,7 @@
    "weight": 10,
    "image": "local-cert.jpg",
    "authors": [ "jdct" ],
-   "sections": [ "tech" ],
+   "branches": [ "tech" ],
    "tags": [ "dev", "ssl", "cert" ]
 }
 

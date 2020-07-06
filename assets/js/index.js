@@ -288,6 +288,15 @@
     }
   })();
 
+  (function goHome() {
+    let btn = elem('.btn_home');
+    if (btn) {
+      btn.addEventListener('click', function(){
+        location.href = "/"
+      });
+    }
+  })();
+
   const light = 'lit';
   const dark = 'dim';
   const storageKey = 'colorMode';

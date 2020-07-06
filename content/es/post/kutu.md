@@ -4,7 +4,7 @@
    "weight": 10,
    "image": "kutu.png",
    "authors": [ "mcabrerizo" ],
-   "sections": [ "tech" ],
+   "branches": [ "tech" ],
    "tags": [ "dev", "golang", "kubernetes", "cli", "utils" ]
 }
 

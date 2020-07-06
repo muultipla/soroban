@@ -1,5 +1,11 @@
 {{- define "main" -}}
 
+{{ if not .File }}
+<div class="universal-wrapper pt-3">
+    <h1>{{ .Title }}</h1>
+</div>
+{{ end }}
+
 <section class="wrap pt-5">
     <h1>{{ .Params.displayName }}</h1>
     <div class="container">
@@ -15,7 +21,7 @@
                     {{ $scratch.Set "image" "thumbnail.svg" }}
                 {{ end }}
                 {{ $image := $scratch.Get "image" }}
-                {{ $params := (dict "Page" $value "Image" $image "Index" $index "Size" $size "Section" false "Ctx" .) }}
+                {{ $params := (dict "Page" $value "Image" $image "Index" $index "Size" $size "Branch" false "Ctx" .) }}
                 {{- partial "components/list-item" $params }}
             {{- end }}
         {{ end }}

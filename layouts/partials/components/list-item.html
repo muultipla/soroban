@@ -1,7 +1,7 @@
 {{- $page := .Page }}
 {{- $index := .Index }}
 {{- $size :=  .Size }}
-{{- $show_section := .Section | default true }}
+{{- $show_section := .Branch | default true }}
 {{- $show_author := .Author | default true }}
 {{- $show_front := .Front | default false }}
 {{- $ctx := .Ctx }}
@@ -32,12 +32,12 @@
                 {{ if $show_author }}
                  |
                 <span class="author">
-                    {{ partial "metadata_authors" (dict "is_linked" false "Ctx" $page ) }}
+                    {{ partial "metadata_term" (dict "is_linked" false "Ctx" $page ) }}
                 </span>
                 {{ end }}
             </span>
             {{ if $show_section }}
-                {{- partial "widgets/article-section" $page.Params.sections }}
+                {{- partial "widgets/article-section" $page.Params.branches }}
             {{ end }}
             <h3 class="article_title">{{ $page.Title }}</h3>
             <div class="article_excerpt {{ if and (eq $index 0) $show_front }} visible {{ end }}">
