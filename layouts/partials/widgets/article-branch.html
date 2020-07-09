@@ -1,6 +1,6 @@
 {{- $sections := . }}
 
-{{- $taxonomy := "sections" }}
+{{- $taxonomy := "branches" }}
 {{ with $sections }}
     {{ range $index, $name_raw := . }}
         {{- $data := site.GetPage (printf "/%s/%s" $taxonomy .) -}}

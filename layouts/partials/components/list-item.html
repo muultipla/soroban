@@ -37,7 +37,7 @@
                 {{ end }}
             </span>
             {{ if $show_section }}
-                {{- partial "widgets/article-section" $page.Params.branches }}
+                {{- partial "widgets/article-branch" $page.Params.branches }}
             {{ end }}
             <h3 class="article_title">{{ $page.Title }}</h3>
             <div class="article_excerpt {{ if and (eq $index 0) $show_front }} visible {{ end }}">
