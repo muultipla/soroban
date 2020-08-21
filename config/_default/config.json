@@ -2,7 +2,7 @@
    "title": "muultipla blog",
    "author": "mood481_",
    "copyright": "Copyright © 2020, Muultipla Labs",
-   "paginate": 3,
+   "paginate": 10,
    "taxonomies": {
       "author": "authors",
       "branch": "branches",
