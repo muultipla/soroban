@@ -1,19 +1,45 @@
+.post_cover_image {
+
+    position: absolute;
+    height: 365px;
+    width: 100%;
+    background-size: cover;
+
+    .blur {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(3px);
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .post{
     margin: 50px auto;
     width: 100%;
     article.post_single {
         max-width: 900px;
         header {
-            margin-bottom: 10px;
-            h1 {
-                margin: 0 0 5px;
-                padding: 0;
-                font-weight: bold;
-                font-size: 1.8rem;
-                line-height: 1.2;
-            }
-            p {
-                padding: 0;
+
+            position: relative;
+            height: 300px;
+            color: var(--light);
+            margin-bottom: 60px;
+            
+            .header_content {
+
+                position: absolute;
+                bottom: 20px;
+
+                h1 {
+                    margin: 0 0 5px;
+                    padding: 0;
+                    font-weight: bold;
+                    font-size: 2rem;
+                    line-height: 1.2;
+                }
+                p {
+                    padding: 0;
+                }    
             }
         }
     }

@@ -10,5 +10,8 @@
     },
     "errorNotFound": {
         "other": "We couldn't find the page you're looking for"
+    },
+    "author": {
+        "other": "By"
     }
 }

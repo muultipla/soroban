@@ -1,15 +1,25 @@
 {{ define "main" }}
+<div class="post_cover_image"
+style="background-image: url({{ (absURL (printf "images/posts/%s" .Params.image)) }})">
+    <div class="blur"></div>
+</div>
 <div class="wrap mt post">
     <article class="post_single">
         <header>
-            <h1>{{ .Title }}</h1>
-            {{- $date := (dateFormat "02.01.2006" .Date) -}}
-            <p class="post_meta">
-                <span class="post_date pale">{{ $date }}</span> ·
-                <span class="post_byline">{{ partial "metadata_term" ( dict "Ctx" . ) }}</span>
-            </p>
-            {{- partial "widgets/tags" . }}
+            <div class="header_content">
+                <h1>{{ .Title }}</h1>
+                {{- $date := (dateFormat "02.01.2006" .Date) -}}
+                <p class="post_meta">
+                    <span class="post_date pale">{{ $date }}</span>
+                </p>    
+            </div>
         </header>
+        <div class="post_info">
+            <p class="post_meta">
+                <span class="post_byline">{{ i18n "author" }} {{ partial "metadata_term" ( dict "Ctx" . ) }}</span>
+            </p>    
+            {{- partial "widgets/tags" . }}
+        </div>
         <div class="post_body">
             <div class="post_inner">
                 {{ .Content }}

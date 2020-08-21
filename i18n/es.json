@@ -10,5 +10,8 @@
     },
     "errorNotFound": {
         "other": "El recurso que has pedido (ya) no existe..."
+    },
+    "author": {
+        "other": "Por"
     }
 }
