@@ -1,5 +1,5 @@
 {
-   "date": "2020-06-21",
+   "date": "2020-10-01",
    "title": "Campus virtual para Cambridge",
    "weight": 10,
    "image": "cambridge.jpg",

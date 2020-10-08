@@ -1,5 +1,5 @@
 {
-   "date": "2020-08-21",
+   "date": "2020-10-08",
    "title": "¿Sabes qué es L&D? Quizá deberías",
    "weight": 10,
    "image": "l&d.jpg",

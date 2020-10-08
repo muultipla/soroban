@@ -1,5 +1,5 @@
 {
-   "date": "2020-05-01",
+   "date": "2020-09-17",
    "title": "Generar certificados locales para desarrollo",
    "slug": "generar-certificados-local",
    "weight": 10,
