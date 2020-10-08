@@ -1,6 +1,7 @@
 {
    "date": "2020-10-01",
    "title": "Campus virtual para Cambridge",
+   "slug": "campus-virtual-para-ambridge",
    "weight": 10,
    "image": "cambridge.jpg",
    "authors": [ "rudesindus" ],

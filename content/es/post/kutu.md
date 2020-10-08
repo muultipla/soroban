@@ -1,6 +1,7 @@
 {
    "date": "2020-09-24",
    "title": "Kutu: actualizando el entorno k8s",
+   "slug": "kutu-actualizando-el-entorno-k8s",
    "weight": 10,
    "image": "kutu.png",
    "authors": [ "mcabrerizo" ],
