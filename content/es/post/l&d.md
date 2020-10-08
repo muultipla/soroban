@@ -1,7 +1,7 @@
 {
    "date": "2020-10-08",
    "title": "¿Sabes qué es L&D? Quizá deberías",
-   "slug": "sabes-que-es-lad-quiza-deberias",
+   "slug": "sabes-que-es-l-and-d-quiza-deberias",
    "weight": 10,
    "image": "l&d.jpg",
    "authors": [ "rudesindus" ],
